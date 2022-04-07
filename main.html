@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Лига Банк</title>
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="public/css/main.css">
+    </head>
+    <body>
+        <!-- Navigation -->
+        <nav>
+            <div class="container nav-container">
+                <!-- Logo -->
+                <a href="/" class="nav-logo">
+                    ЛигаБанк
+                </a>
+                <!-- Items -->
+                <div class="nav-items">
+                    <a data-totabs="main-tabs-container" data-topage="holdings" class="nav-item">
+                        Вклады
+                    </a>
+                    <a data-totabs="main-tabs-container" data-topage="insurance" class="nav-item">
+                        Страхование
+                    </a>
+                    <a data-totabs="main-tabs-container" data-topage="services" class="nav-item">
+                        Сервисы
+                    </a>
+                </div>
+                <!-- Action -->
+                <button onclick="openPopup('login')" class="button-outline">Войти</button>
+            </div>
+        </nav>
+
+        <!-- Header -->
+        <header>
+            <div class="container">
+                <h1>
+                    Инвестируй, <br>
+                    в что-то реальное
+                </h1>
+
+                <p class="text">
+                    Пересиль себя и начни инвестировать,
+                    с самым инновационными банком в сфере
+                    финтех услуг - Лига Банке.
+                </p>
+
+                <div class="flex-row">
+                    <a href="" class="button button-accent button-lg">Попробовать</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Slider -->
+        <section class="section-slider">
+            <div class="container">
+                <div class="slider outline" data-auto="4000">
+                    <div class="slide active">
+                        <h2 class="heading">Вклады с самым высокой ставкой</h2>
+
+                        <button data-totabs="main-tabs-container" data-topage="holdings" class="button-dark button-md">Сделать вклад</button>
+                    </div>
+                    <div class="slide">
+                        <h2 class="heading">Кредит под ипотеку/машину, потребительский кредит</h2>
+
+                        <a href="#calc" class="button-dark button-md">Рассчитать кредит</a>
+                    </div>
+                    <div class="slide">
+                        <h2 class="heading">Отделения по всей России, в каждом городе</h2>
+
+                        <a href="#offices" class="button button-dark button-md">Найти отделения</a>
+                    </div>
+
+                    <div class="arrow-left" data-action="prev">
+                        <img src="public/img/chevron-left.svg">
+                    </div>
+                    <div class="arrow-right" data-action="next">
+                        <img src="public/img/chevron-right.svg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main (Tabs) -->
+        <main>
+            <div class="container">
+                <h2 class="section-title">Услуги</h2>
+
+                <div class="tabs-container" id="main-tabs-container">
+                    <div class="tabs">
+                        <button class="tab active" data-tab="holdings">
+                            Вклады
+                        </button>
+                        <button class="tab" data-tab="loans">
+                            Кредиты
+                        </button>
+                        <button class="tab" data-tab="insurance">
+                            Страхование
+                        </button>
+                        <button class="tab" data-tab="services">
+                            Онлайн-сервисы
+                        </button>
+                    </div>
+                    <div class="pages">
+                        <!-- Вклады -->
+                        <div class="page visible" data-page="holdings">
+                            <h2 class="page-title">Вклады</h2>
+                        </div>
+                        <!-- Кредиты -->
+                        <div class="page" data-page="loans">
+                            <h2 class="page-title">Кредиты</h2>
+                        </div>
+                        <!-- Страхование -->
+                        <div class="page" data-page="insurance">
+                            <h2 class="page-title">Страхование</h2>
+                        </div>
+                        <!-- Сервисы -->
+                        <div class="page" data-page="services">
+                            <h2 class="page-title">Онлайн-сервисы</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Calculator -->
+        <section class="section-calc" id="calc">
+            <div class="container">
+                <h2 class="section-title">Калькулятор кредитования</h2>
+                <form data-showafter="thanks" class="flex-col">
+                    <label for="calc_type">Тип кредитования</label>
+                    <select required name="calc_type">
+                        <option disabled selected value="">Не выбрано</option>
+                        <option value="9.6">Ипотечное кредитование</option>
+                        <option value="3.5">Автомабильное кредитование</option>
+                        <option value="14.5">Потребительский кредит</option>
+                    </select>
+
+                    <label for="calc_fio">ФИО</label>
+                    <input name="calc_fio" type="text" required placeholder="Введите ФИО">
+
+                    <label for="calc_mail">Почта</label>
+                    <input name="calc_mail" type="email" required placeholder="Введите почту">
+
+                    <label for="calc_phone">Телефон</label>
+                    <input name="calc_phone" type="phone" required placeholder="Введите телефон">
+
+                    <button class="button-dark" type="submit">Рассчитать</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Offices -->
+        <section class="section-offices" id="offices">
+            <div class="container">
+                <h2 class="section-title">Отделения</h2>
+                <div class="flex-row flex-gap">
+                    <div class="flex-col card">
+                        <h4>Москва</h4>
+                        <img src="public/img/moscow.webp" alt="Отделение в Москве">
+                    </div>
+                    <div class="flex-col card">
+                        <h4>Самара</h4>
+                        <img src="public/img/samara.webp" alt="Отделение в Самаре">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="flex-row">
+                    <div class="flex-col">
+                        <p>Услуги</p>
+                        <a href="#">Вклады</a>
+                        <a href="#">Страхование</a>
+                        <a href="#">Кредиты</a>
+                        <a href="#">Сервисы</a>
+                    </div>
+                    <div class="flex-col">
+                        <p>Прочее</p>
+                        <a href="#">Контакты</a>
+                        <a href="#">Личный Кабинет</a>
+                        <a href="#">Политика конфиденциальности</a>
+                    </div>
+                </div>
+                <div class="flex-row">
+                    <small>ЛигаБанк © 2022 | Все права защищены.</small>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Popup: Login -->
+        <div class="popup" data-popup="login">
+            <form class="popup-window">
+                <button class="close" onclick="closePopup()">
+                    <img src="public/img/close.svg">
+                </button>
+
+                <h4>Вход</h4>
+
+                <label for="login_email">Почта</label>
+                <input required name="login_email" type="email" placeholder="Введите почту">
+
+                <label for="login_pass">Пороль</label>
+                <input required name="login_pass" type="password" placeholder="Введите пороль">
+
+                <a href="#">Забыл пороль</a>
+                <button type="submit" class="button-dark">Войти</button>
+            </form>
+        </div>
+        <!-- Popup: Thanks -->
+        <div class="popup" data-popup="thanks">
+            <div class="popup-window">
+                <button class="close" onclick="closePopup()">
+                    <img src="public/img/close.svg">
+                </button>
+
+                <h4>Спасибо!</h4>
+                <p>Ваше обращение было отправлено и мы скоро свяжемся с вами :)</p>
+            </div>
+        </div>
+        
+        <!-- Scripts -->
+        <script src="public/js/main.js"></script>
+    </body>
+</html>
